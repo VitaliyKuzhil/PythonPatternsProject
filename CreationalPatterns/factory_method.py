@@ -56,8 +56,8 @@ class FactoryPlain(Creator, ABC):
 
 
 def client_code(move: str) -> None:
-    tour_company = {'T': FactoryTrain, 'P': FactoryPlain}
-    return tour_company[move]()
+    tour_company = {'T': FactoryTrain(), 'P': FactoryPlain()}
+    return tour_company[move]
 
 
 if __name__ == '__main__':
