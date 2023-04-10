@@ -15,7 +15,7 @@ class Person:
             self.friends.pop(self.friends.index(friend))
 
     def __str__(self):
-        return f"Користувач: {self.first_name} {self.last_name} дружить з {self.friends}"
+        return f'Користувач: {self.first_name} {self.last_name} дружить з {self.friends}'
 
 
 class PersonPrototype:
@@ -40,7 +40,7 @@ class PersonPrototype:
 
 prototype = PersonPrototype()
 
-person1 = Person("Nazar", "Petrushin", ['Vova', 'Andrii'])
+person1 = Person('Nazar', 'Petrushin', ['Vova', 'Andrii'])
 prototype.add_person('person1', person1)
 print(person1)
 
