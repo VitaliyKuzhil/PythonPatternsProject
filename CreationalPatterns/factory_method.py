@@ -1,11 +1,17 @@
 from abc import abstractmethod, ABC
 
+''' Компінії по наданню туристичних послуг потрібно розширити способи доставки туристів на локації.
+Коли компанія була меншою, їй потрібен був тільки Потяг. Але тепер компанія готова розширювати свої послуги,
+тому надає послуги за кордоном, куди немає сполучення потягом.
+Нам потрібно добавити ще один тип доставки пасажирів на локації і це буде Літак '''
+
+
 ''' Загальний Інтерфейс для створення продукту '''
 
 
-class Product:
-    def __init__(self, name):
-        self.name = name
+class Product(ABC):
+    def __init__(self):
+        self.name = 'Product'
 
 
 ''' Реалізація Інтерфейса його підкласами '''
@@ -14,27 +20,26 @@ class Product:
 # Перевизначення методу ініціалізації продукту
 class Train(Product):
     def __init__(self):
+        super().__init__()
         self.name = 'Train'
-        super().__init__(self.name)
 
 
 # Перевизначення методу ініціалізації продукту
 class Plane(Product):
     def __init__(self):
+        super().__init__()
         self.name = 'Plain'
-        super().__init__(self.name)
 
 
 ''' Інтерфейс Creator оголошує фабричний метод trevel,
  який повертає об'єкт класу Product, а метод some_operation повертає фактичне імя Product'''
 
 
-class Creator:
+class Creator(ABC):
     @abstractmethod
     def trevel(self) -> Product:
         pass
 
-    @abstractmethod
     def some_operation(self):
         return self.trevel().name
 
@@ -45,12 +50,12 @@ class Creator:
 ''' Перевизначення фабричного методу підкласами класу Creator'''
 
 
-class FactoryTrain(Creator, ABC):
+class FactoryTrain(Creator):
     def trevel(self) -> Product:
         return Train()
 
 
-class FactoryPlain(Creator, ABC):
+class FactoryPlain(Creator):
     def trevel(self) -> Product:
         return Plane()
 
@@ -62,9 +67,3 @@ def client_code(move: str) -> None:
 
 if __name__ == '__main__':
     print(client_code(input('T = Train or P = Plain \n').upper()))
-
-
-''' Припустимо, компінії по наданню туристичних послуг потрібно розширити способи доставки туристів на локації.
-Коли компанія була меншою, їй потрібен був тільки Потяг. Але тепер компанія готова розширювати свої послуги,
-тому надає послуги за кордоном, куди немає сполучення потягом. тиким чином ми добавили Літак, як ще один спосіб доставки
-пасажирів на локації '''
