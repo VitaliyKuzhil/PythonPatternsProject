@@ -4,12 +4,12 @@ from abc import ABC, abstractmethod
 class Pizza:
     def __init__(self, name):
         self.name = name
-        self.dough = None
-        self.toppings = [] or None
-        self.sauce = None
+        self.dough = 'not'
+        self.toppings = [] or 'not'
+        self.sauce = 'not'
 
     def __str__(self):
-        return f'{self.name} pizza \n  * {self.dough} dough \n  * {self.sauce} sauce \n' \
+        return f'{self.name} pizza \n Ingredients:\n  * {self.dough} dough \n  * {self.sauce} sauce \n' \
                f'  * {" ".join(self.toppings)} toppings'
 
 
@@ -76,12 +76,13 @@ class PizzaDirector:
 
 if __name__ == "__main__":
     margherita = MargheritaPizzaBuilder()
-    pepperoni = PepperoniPizzaBuilder()
-
     director = PizzaDirector(margherita)
-    director.build_pizza()
-    print(f'Take --> {margherita.get_pizza()}')
+    print(f'Make --> {director.build_pizza()}')
 
-    director = PizzaDirector(pepperoni)
-    director.build_pizza()
-    print(f'Take --> {pepperoni.get_pizza()}')
+    print()
+
+    pepperoni = PepperoniPizzaBuilder()
+    pepperoni.set_dough()
+    pepperoni.set_sauce()
+    pepperoni.set_toppings()
+    print(f'Make --> {pepperoni.get_pizza()}')
