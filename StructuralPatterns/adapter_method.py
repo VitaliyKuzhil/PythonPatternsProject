@@ -24,14 +24,16 @@ class TransportAdapter(Bus, Train, Plain):
         return self.transport_type.moving()
 
 
-bus = Bus()
-train = Train()
-plain = Plain()
+if __name__ == '__main__':
+    # Example usage
+    bus = Bus()
+    train = Train()
+    plain = Plain()
 
-bus_adapter = TransportAdapter(bus)
-train_adapter = TransportAdapter(train)
-plain_adapter = TransportAdapter(plain)
+    bus_adapter = TransportAdapter(bus)
+    train_adapter = TransportAdapter(train)
+    plain_adapter = TransportAdapter(plain)
 
-bus_adapter.drive()
-train_adapter.drive()
-plain_adapter.drive()
+    bus_adapter.drive()
+    train_adapter.drive()
+    plain_adapter.drive()
