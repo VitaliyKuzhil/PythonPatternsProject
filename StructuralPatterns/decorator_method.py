@@ -14,9 +14,6 @@ class Cart:
     def add_item(self, item):
         self.items.append(item)
 
-    def get_items(self):
-        return self.items
-
     def get_total_cost(self):
         total_cost = sum(item.get_cost() for item in self.items)
         return total_cost
