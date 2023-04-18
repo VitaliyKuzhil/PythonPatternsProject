@@ -31,14 +31,13 @@ class PromoCode:
         return total_cost * 0.8  # знижка 20%
 
 
-my_cart = Cart()
-my_cart.add_item(Item("Футболка", 20))
-my_cart.add_item(Item("Штани", 50))
-my_cart.add_item(Item("Шорти", 30))
+if __name__ == '__main__':
+    my_cart = Cart()
+    my_cart.add_item(Item('Футболка', 20))
+    my_cart.add_item(Item('Штани', 50))
+    my_cart.add_item(Item('Шорти', 30))
 
-my_promo_code = PromoCode(my_cart)
+    my_promo_code = PromoCode(my_cart)
 
-print(f"Вартість без знижки: {my_cart.get_total_cost()} грн")
-print(f"Вартість зі знижкою: {my_promo_code.get_total_cost()} грн")
-
-
+    print(f'Вартість без знижки: {my_cart.get_total_cost()} грн')
+    print(f'Вартість зі знижкою: {my_promo_code.get_total_cost()} грн')
