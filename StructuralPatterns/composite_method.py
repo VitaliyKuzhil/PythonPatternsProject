@@ -40,6 +40,7 @@ class Order(Component):
         return price
 
 
+# Composites
 class RestaurantOrder(Order):
     def __init__(self, components):
         super().__init__(components)

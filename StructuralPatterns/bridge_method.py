@@ -63,9 +63,9 @@ if __name__ == '__main__':
     railway_bridge = RailwayBridge()
 
     print(car.can_cross(road_bridge))
-    print(train.can_cross(road_bridge))
-
     print(car.can_cross(railway_bridge))
+
+    print(train.can_cross(road_bridge))
     print(train.can_cross(railway_bridge))
 
     print(motorcycle.can_cross(road_bridge))
