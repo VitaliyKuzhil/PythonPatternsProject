@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2023-04-20T10:36:00.147Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="3jZ_gXr2medEAn5bsoWc" version="21.1.9" type="google">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1434" dy="3228" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="Nvk4daVxOSDhFh-lgiB1-0" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Person&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ first_name: str&lt;br&gt;+ last_name: str&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ friends: list&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ add_friend(): list&lt;br&gt;+ delete_friend(): str&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="120" y="-2280" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvk4daVxOSDhFh-lgiB1-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;PersonPrototype&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# user: dict&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# add_person(): Type&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# delete_person():&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# clone():&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;# print_users():&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="-2060" width="160" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvk4daVxOSDhFh-lgiB1-2" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Nvk4daVxOSDhFh-lgiB1-1" target="Nvk4daVxOSDhFh-lgiB1-0">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="170" y="-1890" as="sourcePoint" />
+            <mxPoint x="330" y="-1890" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nvk4daVxOSDhFh-lgiB1-3" value="prototype = PersonPrototype()&lt;br&gt;prototype.add_person(&#39;person1&#39;, person1)&lt;br&gt;&lt;br&gt;person2 = prototype.clone(&#39;person1&#39;, first_name=&#39;first_name2&#39;, last_name=&#39;last_name2&#39;, friends=[&#39;friend1&#39;, friend2])&lt;br&gt;prototype.add_person(&#39;person2&#39;, person2)&lt;br&gt;&lt;br&gt;prototype.delete_person(person2)&lt;br&gt;prorotype.print_users()" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=center;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="360" y="-2072.5" width="638" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvk4daVxOSDhFh-lgiB1-4" value="person1 = Person(&#39;first_name&#39;, &#39;last_name&#39;, [&#39;friend1&#39;, &#39;friend2&#39;])&lt;br&gt;person.add_friend([&#39;friend3&#39;, &#39;friend4&#39;])&lt;br&gt;&lt;br&gt;person2.add_friend([&#39;friend3&#39;, &#39;friend4&#39;])&lt;br&gt;person2.delete(friend2)&lt;br&gt;" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=center;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="440" y="-2265" width="340" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvk4daVxOSDhFh-lgiB1-5" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Nvk4daVxOSDhFh-lgiB1-4" target="Nvk4daVxOSDhFh-lgiB1-0">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="330" y="-2010" as="sourcePoint" />
+            <mxPoint x="490" y="-2010" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nvk4daVxOSDhFh-lgiB1-6" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Nvk4daVxOSDhFh-lgiB1-3" target="Nvk4daVxOSDhFh-lgiB1-1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="330" y="-2010" as="sourcePoint" />
+            <mxPoint x="490" y="-2010" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
