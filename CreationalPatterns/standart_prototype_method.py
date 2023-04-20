@@ -8,16 +8,18 @@ class Prototype:
 
 class Person(Prototype):
     def __init__(self, first_name, last_name, friends):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.friends = friends
+        self.__first_name = first_name
+        self.__last_name = last_name
+        self.__friends = friends
 
     def __str__(self):
-        return f'Користувач: {self.first_name} {self.last_name} дружить з {self.friends}'
+        return f'Користувач: {self.__first_name} {self.__last_name} дружить з {self.__friends}'
 
 
-person1 = Person('Nazar', 'Petrushin', ['Vova', 'Andrii'])
-person2 = person1.clone()
+if __name__ == '__main__':
 
-print(person1)
-print(person2)
+    person1 = Person('Nazar', 'Petrushin', ['Vova', 'Andrii'])
+    person2 = person1.clone()
+
+    print(person1)
+    print(person2)
