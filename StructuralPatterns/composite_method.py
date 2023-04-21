@@ -1,73 +1,51 @@
 from abc import ABC, abstractmethod
 
 
-class Component(ABC):
+class TaskComponent(ABC):
     @abstractmethod
-    def get_description(self):
-        pass
-
-    @abstractmethod
-    def get_price(self):
+    def display(self):
         pass
 
 
-class MenuItem(Component):
-    def __init__(self, name, price):
-        self._name = name
-        self._price = price
+class Task(TaskComponent):
+    def __init__(self, name):
+        self.name = name
 
-    def get_description(self):
-        return self._name
-
-    def get_price(self):
-        return self._price
+    def display(self):
+        print(f"{self.name}")
 
 
-class Order(Component):
-    def __init__(self, components):
-        self._components = components
+class TaskList(TaskComponent):
+    def __init__(self):
+        self.tasks = []
 
-    def get_description(self):
-        description = ""
-        for component in self._components:
-            description += f" -- {component.get_description()} : {component.get_price()}$\n"
-        return description
+    def add_task(self, task):
+        self.tasks.append(task)
 
-    def get_price(self):
-        price = 0
-        for component in self._components:
-            price += component.get_price()
-        return price
+    def display(self):
+        for task in self.tasks:
+            task.display()
 
 
-# Composites
-class RestaurantOrder(Order):
-    def __init__(self, components):
-        super().__init__(components)
-        self._components = components
+if __name__ == "__main__":
+    task1 = Task("Buy groceries")
+    task2 = Task("Clean the house")
+    task3 = Task("Pay bills")
+    task4 = Task("Walk the dog")
 
+    task3.display()
+    print()
 
-class BarOrder(Order):
-    def __init__(self, components):
-        super().__init__(components)
-        self._components = components
+    sub_task_list = TaskList()
+    sub_task_list.add_task(task1)
+    sub_task_list.add_task(task2)
 
+    sub_task_list.display()
+    print()
 
-if __name__ == '__main__':
-    burger = MenuItem("Pizza", 10)
-    fries = MenuItem("Fries", 5)
-    salad = MenuItem("Salad", 7)
-    cola = MenuItem("Cola", 3)
-    beer = MenuItem("Beer", 5)
-    wine = MenuItem("Wine", 8)
+    main_task_list = TaskList()
+    main_task_list.add_task(task3)
+    main_task_list.add_task(sub_task_list)
+    main_task_list.add_task(task4)
 
-    restaurant_order = RestaurantOrder((burger, fries, salad, cola))
-    bar_order = BarOrder((beer, wine))
-
-    print("Restaurant order:")
-    print(restaurant_order.get_description())
-    print(f"Price of Restaurant: {restaurant_order.get_price()}$\n")
-
-    print("Bar order:")
-    print(bar_order.get_description())
-    print(f"Price of Bar: {bar_order.get_price()}$")
+    main_task_list.display()
