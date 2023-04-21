@@ -1,4 +1,7 @@
-class Item:
+from abc import ABC
+
+
+class Item(ABC):
     def __init__(self, name, price):
         self.name = name
         self.price = price
@@ -29,10 +32,16 @@ class PromoCode:
 
 
 if __name__ == '__main__':
+
+    t_shirt = Item('Футболка', 20)
+    pants = Item('Штани', 50)
+    shorts = Item('Шорти', 30)
+
     my_cart = Cart()
-    my_cart.add_item(Item('Футболка', 20))
-    my_cart.add_item(Item('Штани', 50))
-    my_cart.add_item(Item('Шорти', 30))
+
+    my_cart.add_item(t_shirt)
+    my_cart.add_item(pants)
+    my_cart.add_item(shorts)
 
     my_promo_code = PromoCode(my_cart)
 

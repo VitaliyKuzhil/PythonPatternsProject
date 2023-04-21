@@ -42,27 +42,27 @@ class Payment:
 
 class OrderFacade:
     def __init__(self):
-        self.cart = ShoppingCart()
-        self.delivery = Delivery()
-        self.payment = Payment()
+        self.__cart = ShoppingCart()
+        self.__delivery = Delivery()
+        self.__payment = Payment()
 
     def add_to_cart(self, product):
-        self.cart.add_item(product)
+        self.__cart.add_item(product)
 
     def remove_from_cart(self, product):
-        self.cart.remove_item(product)
+        self.__cart.remove_item(product)
 
     def delivery_address(self, address):
-        self.delivery.set_address(address)
+        self.__delivery.set_address(address)
 
     def set_payment_amount(self, amount):
-        self.payment.set_amount(amount)
+        self.__payment.set_amount(amount)
 
     def order(self):
-        total = self.cart.calculate_total()
+        total = self.__cart.calculate_total()
         self.set_payment_amount(total)
-        self.delivery.deliver()
-        self.payment.pay()
+        self.__delivery.deliver()
+        self.__payment.pay()
 
         print('Order successfully')
 
